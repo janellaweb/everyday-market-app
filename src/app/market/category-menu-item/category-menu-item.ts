@@ -1,9 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-category-menu-item',
+  standalone: true,
   imports: [],
   templateUrl: './category-menu-item.html',
-  styleUrl: './category-menu-item.css',
+  styleUrl: './category-menu-item.css'
 })
-export class CategoryMenuItem {}
+export class CategoryMenuItem {
+
+  @Input() categoryName: string = '';
+
+  @Output() itemclicked = new EventEmitter<string>();
+
+  onItemClick() {
+    this.itemclicked.emit(this.categoryName);
+  }
+}

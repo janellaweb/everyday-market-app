@@ -1,1 +1,10 @@
-<p>products-page works!</p>
+<section>
+  <h2>PS5 Games Categories</h2>
+
+  <p>Select a category to explore different PS5 game genres.</p>
+
+  <app-category-menu
+    [categories]="categoryList"
+    (categorySelected)="onCategorySelected($event)">
+  </app-category-menu>
+</section>

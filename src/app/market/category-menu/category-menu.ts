@@ -1,9 +1,22 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+
+import { Category } from '../models/category';
+import { CategoryMenuItem } from '../category-menu-item/category-menu-item';
 
 @Component({
   selector: 'app-category-menu',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule, CategoryMenuItem],
   templateUrl: './category-menu.html',
-  styleUrl: './category-menu.css',
+  styleUrl: './category-menu.css'
 })
-export class CategoryMenu {}
+export class CategoryMenu {
+  @Input() categories: Category[] = [];
+
+  @Output() categorySelected = new EventEmitter<Category>();
+
+  onItemClicked(category: Category) {
+    this.categorySelected.emit(category);
+  }
+}
