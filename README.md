@@ -4,7 +4,6 @@
 This project is called Everyday Market App, customized as Janella's Gaming Market. The application displays different PS5 game categories using reusable standalone components.
 
 This project followed the instructions in the assignment.
-
  
 ## Components Created
 ng g c shared/header
@@ -13,7 +12,6 @@ ng g c market/category-menu
 ng g c market/category-menu-item
 
 All components use Angular standalone as required.
- 
  
 ## Categories Used
 •	Action
