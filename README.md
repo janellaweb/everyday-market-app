@@ -1,59 +1,90 @@
-# EverydayMarketApp
+Everyday Market App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.10.
+Overview
+This project is called Everyday Market App, customized as Janella's Gaming Market. The application displays different PS5 game categories using reusable standalone components.
 
-## Development server
+This project followed the instructions in the assignment.
 
-To start a local development server, run:
+The project demonstrates:
 
-```bash
+•	Angular standalone components
+•	Angular CLI project setup
+•	Property binding
+•	Event binding
+•	@Input() and @Output()
+•	EventEmitter
+•	Angular control flow syntax using @for and @if
+•	Parent-child component communication
+ 
+Folder Structure
+src/app/shared
+src/app/market
+•	shared contains reusable global components.
+•	market contains product and category-related components.
+ 
+Components Created
+ng g c shared/header
+ng g c market/products-page
+ng g c market/category-menu
+ng g c market/category-menu-item
+
+All components use Angular standalone as required.
+ 
+Features Implemented
+AppComponent
+•	Imports Header and ProductsPage
+•	Displays components using selectors in app.html
+
+HeaderComponent
+•	Custom gaming-themed design
+•	Uses custom hero image
+•	Includes personalized title: Janella's Gaming Market
+•	Smooth scrolling Browse Categories button
+
+ProductsPageComponent
+•	Parent component of CategoryMenu
+•	Uses a hard-coded list of 5 gaming categories
+•	Passes category data using property binding:
+
+[categories]="categoryList"
+•	Uses event binding:
+
+(categorySelected)="onCategorySelected($event)"
+•	Displays alert when category is selected
+
+CategoryMenuComponent
+•	Receives data using @Input()
+•	Emits events using @Output() and EventEmitter
+•	Uses Angular @for syntax to display category cards
+•	Uses Angular @if syntax for conditional rendering
+CategoryMenuItemComponent
+•	Receives category name and icon using @Input()
+•	Emits click events using @Output() and EventEmitter
+•	Displays SVG category icons
+ 
+Categories Used
+•	Action
+•	Racing
+•	Sports
+•	Horror
+•	Adventure
+ 
+Running the Project
+
+Install:
+
+npm install
+Run the Angular development server:
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Open in browser:
+http://localhost:4200
+ 
+Notes
+The node_modules folder is deleted. Please run: npm install
 
-## Code scaffolding
+Author: 
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Submitted by Janella Quizon for Assignment 1 for Front End Frameworks.
+I confirm that I have used ChatGPT and your demos to help me comply and understand the assignment. I also used my experience as a Graphic
+Designer to make it look appealing in a way. Thank you very much! 

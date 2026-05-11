@@ -1,9 +1,21 @@
-<div class="category-grid">
-  @for (category of categories; track category.id) {
-    <app-category-menu-item
-    [categoryName]="category.name"
-    [icon]="category.icon"
-    (itemclicked)="onItemClicked(category)">
-    </app-category-menu-item>
-  }
-</div>
+@if (categories.length > 0) {
+
+  <div class="category-grid">
+
+    @for (category of categories; track category.id) {
+
+      <app-category-menu-item
+        [categoryName]="category.name"
+        [icon]="category.icon"
+        (itemclicked)="onItemClicked(category)">
+      </app-category-menu-item>
+
+    }
+
+  </div>
+
+} @else {
+
+  <p>No categories available.</p>
+
+}
