@@ -1,11 +1,11 @@
-Everyday Market App
+## Everyday Market App
 
-Overview
+## Overview
 This project is called Everyday Market App, customized as Janella's Gaming Market. The application displays different PS5 game categories using reusable standalone components.
 
 This project followed the instructions in the assignment.
 
-The project demonstrates:
+## The project demonstrates:
 
 •	Angular standalone components
 •	Angular CLI project setup
@@ -16,7 +16,8 @@ The project demonstrates:
 •	Angular control flow syntax using @for and @if
 •	Parent-child component communication
  
-Folder Structure
+## Folder Structure
+
 src/app/shared
 src/app/market
 •	shared contains reusable global components.
@@ -30,7 +31,8 @@ ng g c market/category-menu-item
 
 All components use Angular standalone as required.
  
-Features Implemented
+## Features Implemented
+
 AppComponent
 •	Imports Header and ProductsPage
 •	Displays components using selectors in app.html
@@ -53,28 +55,36 @@ ProductsPageComponent
 •	Displays alert when category is selected
 
 CategoryMenuComponent
+
 •	Receives data using @Input()
 •	Emits events using @Output() and EventEmitter
 •	Uses Angular @for syntax to display category cards
 •	Uses Angular @if syntax for conditional rendering
+
 CategoryMenuItemComponent
 •	Receives category name and icon using @Input()
 •	Emits click events using @Output() and EventEmitter
 •	Displays SVG category icons
  
-Categories Used
+## Categories Used
 •	Action
 •	Racing
 •	Sports
 •	Horror
 •	Adventure
- 
-Running the Project
 
-Install:
+## Testing
+
+Tested using ng test and ng lint
+ 
+## Running the Project
+
+Install this first:
 
 npm install
-Run the Angular development server:
+
+Then Run it: 
+
 ng serve
 
 Open in browser:
