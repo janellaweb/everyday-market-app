@@ -73,8 +73,6 @@
   filter: brightness(1.08);
 }
 
-
-
 .hero-image {
   flex: 1;
   display: flex;
@@ -86,4 +84,33 @@
   width: 430px;
   max-width: 100%;
   object-fit: contain;
+}
+
+.top-nav {
+  position: absolute;
+
+  top: 30px;
+  left: 50px;
+
+  display: flex;
+  gap: 24px;
+}
+
+.nav-link {
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  opacity: 0.8;
+
+  transition: 0.3s ease;
+}
+
+.nav-link:hover {
+  opacity: 1;
+
+  color: #c084fc;
 }

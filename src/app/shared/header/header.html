@@ -1,18 +1,36 @@
 <header class="hero-section">
+
+  <div class="top-nav">
+
+    <a routerLink="/home" class="nav-link">
+      Home
+    </a>
+
+    <a routerLink="/products" class="nav-link">
+      Products
+    </a>
+
+  </div>
+
   <div class="hero-content">
+
     <h1>
       Janella's
       <span>Gaming Market</span>
     </h1>
 
-    <p>Explore top PS5 games across your favorite categories.</p>
+    <p>
+      Explore top PS5 games across your favorite categories.
+    </p>
 
-   <button class="browse-btn" (click)="scrollToCategories()">
-      Browse Categories →
-  </button>
+    <a routerLink="/products" class="browse-btn">
+      Browse Products →
+    </a>
+
   </div>
 
   <div class="hero-image">
     <img src="/images/hero.webp" alt="Gaming Hero Image" />
   </div>
+
 </header>
