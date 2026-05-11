@@ -38,3 +38,36 @@
 .categories-section {
   padding: 30px 60px 60px;
 }
+
+.back-home-btn {
+
+  margin-top: 30px;
+
+  padding: 14px 28px;
+
+  border: none;
+  border-radius: 14px;
+
+  background: linear-gradient(
+    90deg,
+    #ff00aa,
+    #7b2ff7
+  );
+
+  color: white;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.back-home-btn:hover {
+
+  transform: translateY(-3px);
+
+  opacity: 0.9;
+
+}

@@ -2,13 +2,13 @@
 
   <div class="top-nav">
 
-    <a routerLink="/home" class="nav-link">
+    <button class="nav-link" (click)="goHome()">
       Home
-    </a>
+    </button>
 
-    <a routerLink="/products" class="nav-link">
+    <button class="nav-link" (click)="goToProducts()">
       Products
-    </a>
+    </button>
 
   </div>
 
@@ -23,14 +23,19 @@
       Explore top PS5 games across your favorite categories.
     </p>
 
-    <a routerLink="/products" class="browse-btn">
+    <button class="browse-btn" (click)="goToProducts()">
       Browse Products →
-    </a>
+    </button>
 
   </div>
 
   <div class="hero-image">
-    <img src="/images/hero.webp" alt="Gaming Hero Image" />
+
+    <img
+      src="/images/hero.webp"
+      alt="Gaming Hero Image"
+    />
+
   </div>
 
 </header>
