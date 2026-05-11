@@ -1,3 +1,16 @@
-<button (click)="onItemClick()">
-  {{ categoryName }}
-</button>
+<div
+  class="category-card"
+  (click)="onItemClick()"
+  (keydown.enter)="onItemClick()"
+  tabindex="0"
+>
+
+  <img
+    [src]="icon"
+    [alt]="categoryName"
+    class="category-icon"
+  />
+
+  <h3>{{ categoryName }}</h3>
+
+</div>

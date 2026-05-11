@@ -18,6 +18,6 @@ describe('App', () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, everyday-market-app');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Janella\'s Gaming Market');
   });
 });

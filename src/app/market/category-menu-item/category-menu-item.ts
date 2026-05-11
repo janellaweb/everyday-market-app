@@ -9,7 +9,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class CategoryMenuItem {
 
-  @Input() categoryName: string = '';
+  @Input() categoryName = '';
+  @Input() icon = '';
 
   @Output() itemclicked = new EventEmitter<string>();
 

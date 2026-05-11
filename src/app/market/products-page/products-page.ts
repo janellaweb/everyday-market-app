@@ -13,12 +13,36 @@ import { CategoryMenu } from '../category-menu/category-menu';
 export class ProductsPage {
 
   categoryList: Category[] = [
-    { id: 1001, name: 'Action' },
-    { id: 1002, name: 'Racing' },
-    { id: 1003, name: 'Sports' },
-    { id: 1004, name: 'Horror' },
-    { id: 1005, name: 'Adventure' }
-  ];
+  {
+    id: 1001,
+    name: 'Action',
+    icon: '/images/action.svg'
+  },
+
+  {
+    id: 1002,
+    name: 'Racing',
+    icon: '/images/racing.svg'
+  },
+
+  {
+    id: 1003,
+    name: 'Sports',
+    icon: '/images/sports.svg'
+  },
+
+  {
+    id: 1004,
+    name: 'Horror',
+    icon: '/images/horror.svg'
+  },
+
+  {
+    id: 1005,
+    name: 'Adventure',
+    icon: '/images/adventure.svg'
+  }
+];
 
   onCategorySelected(category: Category) {
     alert('Selected Category: ' + category.name);
