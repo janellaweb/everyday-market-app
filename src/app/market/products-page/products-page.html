@@ -1,9 +1,20 @@
-<section id="categories" class="categories-section">
-  <h2>Game Categories</h2>
-  <p>Find your next favorite game</p>
+<section id="categories-section" class="categories-section">
+
+  <div class="categories-header">
+    <h2>Game Categories</h2>
+    <p>Find your next favorite game</p>
+  </div>
 
   <app-category-menu
     [categories]="categoryList"
     (categorySelected)="onCategorySelected($event)">
   </app-category-menu>
+
+  @if (selectedCategory) {
+    <div class="selected-category">
+      <h2>{{ selectedCategory.name }}</h2>
+      <p>{{ selectedCategory.description }}</p>
+    </div>
+  }
+
 </section>
