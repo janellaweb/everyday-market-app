@@ -1,5 +1,13 @@
 import { Component } from '@angular/core';
-import { ReactiveFormsModule, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ReactiveFormsModule, FormControl, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
+
+function canadaOnlyValidator(control: AbstractControl): ValidationErrors | null {
+  if (control.value === 'Canada') {
+    return null;
+  }
+
+  return { canadaOnly: true };
+}
 
 @Component({
   selector: 'app-register-page',
@@ -46,7 +54,8 @@ export class RegisterPage {
     ]),
 
     country: new FormControl('', [
-      Validators.required
+      Validators.required,
+      canadaOnlyValidator
     ]),
 
     terms: new FormControl(false, [
