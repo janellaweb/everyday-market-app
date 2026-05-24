@@ -1,12 +1,16 @@
 <h1>Register</h1>
 
-<form [formGroup]="registerForm">
+<form
+  [formGroup]="registerForm"
+  (ngSubmit)="onSubmit()"
+>
 
   <!-- First Name -->
   <div>
-    <label>First Name</label>
+    <label for="firstName">First Name</label>
 
     <input
+      id="firstName"
       type="text"
       formControlName="firstName"
       [class.invalid]="registerForm.get('firstName')?.touched && registerForm.get('firstName')?.invalid"
@@ -25,9 +29,10 @@
 
   <!-- Last Name -->
   <div>
-    <label>Last Name</label>
+    <label for="lastName">Last Name</label>
 
     <input
+      id="lastName"
       type="text"
       formControlName="lastName"
       [class.invalid]="registerForm.get('lastName')?.touched && registerForm.get('lastName')?.invalid"
@@ -46,9 +51,10 @@
 
   <!-- Email -->
   <div>
-    <label>Email</label>
+    <label for="email">Email</label>
 
     <input
+      id="email"
       type="email"
       formControlName="email"
       [class.invalid]="registerForm.get('email')?.touched && registerForm.get('email')?.invalid"
@@ -67,9 +73,10 @@
 
   <!-- Phone -->
   <div>
-    <label>Phone Number</label>
+    <label for="phone">Phone Number</label>
 
     <input
+      id="phone"
       type="text"
       formControlName="phone"
       [class.invalid]="registerForm.get('phone')?.touched && registerForm.get('phone')?.invalid"
@@ -88,9 +95,10 @@
 
   <!-- Date of Birth -->
   <div>
-    <label>Date of Birth</label>
+    <label for="dateOfBirth">Date of Birth</label>
 
     <input
+      id="dateOfBirth"
       type="date"
       formControlName="dateOfBirth"
       [class.invalid]="registerForm.get('dateOfBirth')?.touched && registerForm.get('dateOfBirth')?.invalid"
@@ -101,9 +109,10 @@
 
   <!-- Street Address -->
   <div>
-    <label>Street Address</label>
+    <label for="streetAddress">Street Address</label>
 
     <input
+      id="streetAddress"
       type="text"
       formControlName="streetAddress"
       [class.invalid]="registerForm.get('streetAddress')?.touched && registerForm.get('streetAddress')?.invalid"
@@ -114,9 +123,10 @@
 
   <!-- Province -->
   <div>
-    <label>Province</label>
+    <label for="province">Province</label>
 
     <select
+      id="province"
       formControlName="province"
       [class.invalid]="registerForm.get('province')?.touched && registerForm.get('province')?.invalid"
     >
@@ -141,9 +151,10 @@
 
   <!-- Country -->
   <div>
-    <label>Country</label>
+    <label for="country">Country</label>
 
     <select
+      id="country"
       formControlName="country"
       [class.invalid]="registerForm.get('country')?.touched && registerForm.get('country')?.invalid"
     >
@@ -159,19 +170,26 @@
 
   <!-- Terms -->
   <div>
-    <label>
-      <input type="checkbox" formControlName="terms">
+
+    <input
+      id="terms"
+      type="checkbox"
+      formControlName="terms"
+    >
+
+    <label for="terms">
       I accept the Terms & Conditions
     </label>
+
   </div>
 
   <br>
 
-<button
-  type="submit"
-  [disabled]="registerForm.invalid"
->
-  Submit
-</button>
+  <button
+    type="submit"
+    [disabled]="registerForm.invalid"
+  >
+    Submit
+  </button>
 
 </form>

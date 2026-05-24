@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ReactiveFormsModule, FormControl, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
+import { Router } from '@angular/router';
 
 function canadaOnlyValidator(control: AbstractControl): ValidationErrors | null {
   if (control.value === 'Canada') {
@@ -16,6 +17,8 @@ function canadaOnlyValidator(control: AbstractControl): ValidationErrors | null 
   styleUrl: './register-page.css',
 })
 export class RegisterPage {
+
+  constructor(private router: Router) {}
 
   registerForm = new FormGroup({
     firstName: new FormControl('', [
@@ -62,5 +65,11 @@ export class RegisterPage {
       Validators.requiredTrue
     ])
   });
+
+  onSubmit() {
+    if (this.registerForm.valid) {
+      this.router.navigate(['/products']);
+    }
+  }
 
 }
