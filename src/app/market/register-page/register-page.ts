@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ReactiveFormsModule, FormControl, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -18,18 +18,12 @@ function canadaOnlyValidator(control: AbstractControl): ValidationErrors | null 
 })
 export class RegisterPage {
 
-  constructor(private router: Router) {}
+  private router = inject(Router);
 
   registerForm = new FormGroup({
-    firstName: new FormControl('', [
+    name: new FormControl('', [
       Validators.required,
-      Validators.minLength(2),
-      Validators.pattern('^[A-Za-z ]+$')
-    ]),
-
-    lastName: new FormControl('', [
-      Validators.required,
-      Validators.minLength(2),
+      Validators.minLength(5),
       Validators.pattern('^[A-Za-z ]+$')
     ]),
 
@@ -66,9 +60,15 @@ export class RegisterPage {
     ])
   });
 
+// Added little Query Parameter a bit 
+
   onSubmit() {
     if (this.registerForm.valid) {
-      this.router.navigate(['/products']);
+      this.router.navigate(['/products'], {
+      queryParams: {
+        name: this.registerForm.value.name
+      }
+    });
     }
   }
 

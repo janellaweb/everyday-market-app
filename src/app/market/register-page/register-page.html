@@ -1,53 +1,32 @@
-<h1>Register</h1>
+<h1 id="register-form">Register</h1>
 
 <form
   [formGroup]="registerForm"
   (ngSubmit)="onSubmit()"
 >
 
-  <!-- First Name -->
-  <div>
-    <label for="firstName">First Name</label>
+   <!-- Name -->
+<div>
+  <label for="name">Name</label>
 
-    <input
-      id="firstName"
-      type="text"
-      formControlName="firstName"
-      [class.invalid]="registerForm.get('firstName')?.touched && registerForm.get('firstName')?.invalid"
-    >
+  <input
+    id="name"
+    type="text"
+    formControlName="name"
+    [class.invalid]="registerForm.get('name')?.touched && registerForm.get('name')?.invalid"
+  >
 
-    @if (registerForm.get('firstName')?.touched && registerForm.get('firstName')?.invalid) {
+  @if (registerForm.get('name')?.touched && registerForm.get('name')?.invalid) {
 
-      <p class="error-text">
-        First name must contain only letters.
-      </p>
+    <p class="error-text">
+      Name must be at least 5 characters and contain only letters/spaces.
+    </p>
 
-    }
-  </div>
+  }
+</div>
 
-  <br>
+<br>
 
-  <!-- Last Name -->
-  <div>
-    <label for="lastName">Last Name</label>
-
-    <input
-      id="lastName"
-      type="text"
-      formControlName="lastName"
-      [class.invalid]="registerForm.get('lastName')?.touched && registerForm.get('lastName')?.invalid"
-    >
-
-    @if (registerForm.get('lastName')?.touched && registerForm.get('lastName')?.invalid) {
-
-      <p class="error-text">
-        Last name must contain only letters.
-      </p>
-
-    }
-  </div>
-
-  <br>
 
   <!-- Email -->
   <div>

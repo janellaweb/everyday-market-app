@@ -24,6 +24,29 @@ export class Header {
 
   }
 
+  // Added goToRegister method to navigate to
+  // the register page and scroll down to the form
+
+  goToRegister() {
+
+  this.router.navigate(['/register']).then(() => {
+
+    setTimeout(() => {
+
+      const element = document.getElementById('register-form');
+
+      if (element) {
+        element.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+
+    }, 100);
+
+  });
+
+}
+
   goToProducts() {
 
     this.router.navigate(['/products']);
