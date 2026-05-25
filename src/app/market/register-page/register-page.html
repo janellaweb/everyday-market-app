@@ -1,174 +1,141 @@
-<h1 id="register-form">Register</h1>
-
 <form
   [formGroup]="registerForm"
   (ngSubmit)="onSubmit()"
 >
+  <div class="form-grid">
 
-   <!-- Name -->
-<div>
-  <label for="name">Name</label>
+    <div class="form-header full-width">
+      <h1 id="register-form">Create Your Account</h1>
 
+      <p>
+        Register now to unlock personalized recommendations, trending titles, and exclusive gaming updates.
+      </p>
+    </div>
+
+    <div>
+      <label for="name">Name</label>
+      <input
+        id="name"
+        type="text"
+        formControlName="name"
+        [class.invalid]="registerForm.get('name')?.touched && registerForm.get('name')?.invalid"
+      >
+
+      @if (registerForm.get('name')?.touched && registerForm.get('name')?.invalid) {
+        <p class="error-text">
+          Name must be at least 5 characters and contain only letters/spaces.
+        </p>
+      }
+    </div>
+
+    <div>
+      <label for="email">Email</label>
+      <input
+        id="email"
+        type="email"
+        formControlName="email"
+        [class.invalid]="registerForm.get('email')?.touched && registerForm.get('email')?.invalid"
+      >
+
+      @if (registerForm.get('email')?.touched && registerForm.get('email')?.invalid) {
+        <p class="error-text">
+          Please enter a valid email address.
+        </p>
+      }
+    </div>
+
+    <div>
+      <label for="phone">Phone Number</label>
+      <input
+        id="phone"
+        type="text"
+        formControlName="phone"
+        [class.invalid]="registerForm.get('phone')?.touched && registerForm.get('phone')?.invalid"
+      >
+
+      @if (registerForm.get('phone')?.touched && registerForm.get('phone')?.invalid) {
+        <p class="error-text">
+          Phone number must be 10 digits.
+        </p>
+      }
+    </div>
+
+    <div>
+      <label for="dateOfBirth">Date of Birth</label>
+      <input
+        id="dateOfBirth"
+        type="date"
+        formControlName="dateOfBirth"
+        [class.invalid]="registerForm.get('dateOfBirth')?.touched && registerForm.get('dateOfBirth')?.invalid"
+      >
+    </div>
+
+    <div class="full-width">
+      <label for="streetAddress">Street Address</label>
+      <input
+        id="streetAddress"
+        type="text"
+        formControlName="streetAddress"
+        [class.invalid]="registerForm.get('streetAddress')?.touched && registerForm.get('streetAddress')?.invalid"
+      >
+    </div>
+
+    <div>
+      <label for="province">Province</label>
+      <select
+        id="province"
+        formControlName="province"
+        [class.invalid]="registerForm.get('province')?.touched && registerForm.get('province')?.invalid"
+      >
+        <option value="">Select Province</option>
+        <option value="AB">Alberta</option>
+        <option value="BC">British Columbia</option>
+        <option value="MB">Manitoba</option>
+        <option value="NB">New Brunswick</option>
+        <option value="NL">Newfoundland and Labrador</option>
+        <option value="NS">Nova Scotia</option>
+        <option value="ON">Ontario</option>
+        <option value="PE">Prince Edward Island</option>
+        <option value="QC">Quebec</option>
+        <option value="SK">Saskatchewan</option>
+        <option value="NT">Northwest Territories</option>
+        <option value="NU">Nunavut</option>
+        <option value="YT">Yukon</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="country">Country</label>
+      <select
+        id="country"
+        formControlName="country"
+        [class.invalid]="registerForm.get('country')?.touched && registerForm.get('country')?.invalid"
+      >
+        <option value="">Select Country</option>
+        <option value="Canada">Canada</option>
+        <option value="United States">United States</option>
+      </select>
+    </div>
+
+<div class="checkbox-group full-width">
   <input
-    id="name"
-    type="text"
-    formControlName="name"
-    [class.invalid]="registerForm.get('name')?.touched && registerForm.get('name')?.invalid"
-  >
+    id="terms"
+    type="checkbox"
+    formControlName="terms"
+  />
 
-  @if (registerForm.get('name')?.touched && registerForm.get('name')?.invalid) {
-
-    <p class="error-text">
-      Name must be at least 5 characters and contain only letters/spaces.
-    </p>
-
-  }
+  <label for="terms">
+    I accept the Terms & Conditions
+  </label>
 </div>
 
-<br>
-
-
-  <!-- Email -->
-  <div>
-    <label for="email">Email</label>
-
-    <input
-      id="email"
-      type="email"
-      formControlName="email"
-      [class.invalid]="registerForm.get('email')?.touched && registerForm.get('email')?.invalid"
+    <button
+      class="full-width"
+      type="submit"
+      [disabled]="registerForm.invalid"
     >
-
-    @if (registerForm.get('email')?.touched && registerForm.get('email')?.invalid) {
-
-      <p class="error-text">
-        Please enter a valid email address.
-      </p>
-
-    }
-  </div>
-
-  <br>
-
-  <!-- Phone -->
-  <div>
-    <label for="phone">Phone Number</label>
-
-    <input
-      id="phone"
-      type="text"
-      formControlName="phone"
-      [class.invalid]="registerForm.get('phone')?.touched && registerForm.get('phone')?.invalid"
-    >
-
-    @if (registerForm.get('phone')?.touched && registerForm.get('phone')?.invalid) {
-
-      <p class="error-text">
-        Phone number must be 10 digits.
-      </p>
-
-    }
-  </div>
-
-  <br>
-
-  <!-- Date of Birth -->
-  <div>
-    <label for="dateOfBirth">Date of Birth</label>
-
-    <input
-      id="dateOfBirth"
-      type="date"
-      formControlName="dateOfBirth"
-      [class.invalid]="registerForm.get('dateOfBirth')?.touched && registerForm.get('dateOfBirth')?.invalid"
-    >
-  </div>
-
-  <br>
-
-  <!-- Street Address -->
-  <div>
-    <label for="streetAddress">Street Address</label>
-
-    <input
-      id="streetAddress"
-      type="text"
-      formControlName="streetAddress"
-      [class.invalid]="registerForm.get('streetAddress')?.touched && registerForm.get('streetAddress')?.invalid"
-    >
-  </div>
-
-  <br>
-
-  <!-- Province -->
-  <div>
-    <label for="province">Province</label>
-
-    <select
-      id="province"
-      formControlName="province"
-      [class.invalid]="registerForm.get('province')?.touched && registerForm.get('province')?.invalid"
-    >
-
-      <option value="">Select Province</option>
-
-      <option value="AB">Alberta</option>
-      <option value="BC">British Columbia</option>
-      <option value="MB">Manitoba</option>
-      <option value="NB">New Brunswick</option>
-      <option value="NL">Newfoundland and Labrador</option>
-      <option value="NS">Nova Scotia</option>
-      <option value="ON">Ontario</option>
-      <option value="PE">Prince Edward Island</option>
-      <option value="QC">Quebec</option>
-      <option value="SK">Saskatchewan</option>
-
-    </select>
-  </div>
-
-  <br>
-
-  <!-- Country -->
-  <div>
-    <label for="country">Country</label>
-
-    <select
-      id="country"
-      formControlName="country"
-      [class.invalid]="registerForm.get('country')?.touched && registerForm.get('country')?.invalid"
-    >
-
-      <option value="">Select Country</option>
-      <option value="Canada">Canada</option>
-      <option value="United States">United States</option>
-
-    </select>
-  </div>
-
-  <br>
-
-  <!-- Terms -->
-  <div>
-
-    <input
-      id="terms"
-      type="checkbox"
-      formControlName="terms"
-    >
-
-    <label for="terms">
-      I accept the Terms & Conditions
-    </label>
+      Submit
+    </button>
 
   </div>
-
-  <br>
-
-  <button
-    type="submit"
-    [disabled]="registerForm.invalid"
-  >
-    Submit
-  </button>
-
 </form>
